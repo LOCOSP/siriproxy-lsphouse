@@ -1,4 +1,3 @@
-
 class SiriProxy::Plugin::RPi < SiriProxy::Plugin
 
   def initialize(config)
@@ -7,14 +6,14 @@ class SiriProxy::Plugin::RPi < SiriProxy::Plugin
   
 ############# Commands
 
-  listen_for /living room sidelights on/i do
-	light_lr_corner
+  listen_for /lights on/i do
+	light_on
 	request_completed		
   end
   
 ############# Actions
 
-  def light_lr_corner
+  def light_on
 	`tdtool --on 2`
 	say "lights are ON"
   end
