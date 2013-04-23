@@ -6,16 +6,16 @@ class SiriProxy::Plugin::RPi < SiriProxy::Plugin
   
 ############# Commands
 
-  listen_for /corner light (on|off)/i do |command|
-	corner_light_on (command.downcase.strip)
-	request_completed		
+  listen_for (/turn (on|off) sidelight/i) do |command|
+	command_sidelight(command.downcase.strip)
+	request_completed
   end
   
 ############# Actions
 
-  def corner_light_on (command)
+  def command_sidelight(command)
 	`tdtool --#{command} 2`
-	say "Corner lights ar #{command}"
+	say "Turning #{command} sidelight now."
   end
   
 ############# Initialization
