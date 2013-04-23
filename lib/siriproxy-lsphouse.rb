@@ -6,7 +6,7 @@ class SiriProxy::Plugin::RPi < SiriProxy::Plugin
   
 ############# Commands
 
-  listen_for /corner light (restart|stop|start)/i do |command|
+  listen_for /corner light (on|off)/i do |command|
 	corner_light_on (command.downcase.strip)
 	request_completed		
   end
