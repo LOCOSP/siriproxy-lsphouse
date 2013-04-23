@@ -5,6 +5,16 @@ class SiriProxy::Plugin::RPi < SiriProxy::Plugin
 
   
 ############# Commands
+  
+  listen_for (/telldus status/i) do 
+	telldus_status
+	request_completed
+  end
+  
+    listen_for (/telldus start/i) do 
+	telldus_start
+	request_completed
+  end
 
   listen_for (/turn (on|off) sidelight/i) do |command|
 	command_sidelight(command.downcase.strip)
@@ -22,6 +32,16 @@ class SiriProxy::Plugin::RPi < SiriProxy::Plugin
   end
   
 ############# Actions
+
+  def telldus_status
+	status = `service telldusd status`
+	say "#{status}"
+  end
+  
+    def telldus_start
+	start = `service telldusd start`
+	say "#{start}"
+  end
 
   def command_sidelight(command)
 	`tdtool --#{command} 2`
