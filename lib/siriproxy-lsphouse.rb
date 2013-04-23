@@ -17,17 +17,17 @@ class SiriProxy::Plugin::RPi < SiriProxy::Plugin
   end
 
   listen_for (/turn (on|off) sidelight/i) do |command|
-	command_sidelight(command.downcase.strip)
+	command_sidelight(command)
 	request_completed
   end
   
     listen_for (/turn (on|off) gallery/i) do |command|
-	command_gallery(command.downcase.strip)
+	command_gallery(command)
 	request_completed
   end
   
     listen_for (/turn (on|off) bed light/i) do |command|
-	command_bed_light(command.downcase.strip)
+	command_bed_light(command)
 	request_completed
   end
   
