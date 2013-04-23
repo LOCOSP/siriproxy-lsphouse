@@ -6,12 +6,12 @@ class SiriProxy::Plugin::RPi < SiriProxy::Plugin
   
 ############# Commands
   
-  listen_for (/telldus status/i) do 
+  listen_for (/stick status | electricity status/i) do 
 	telldus_status
 	request_completed
   end
   
-    listen_for (/telldus start/i) do 
+    listen_for (/ start stick/i) do 
 	telldus_start
 	request_completed
   end
