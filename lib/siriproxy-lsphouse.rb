@@ -24,7 +24,7 @@ class SiriProxy::Plugin::RPi < SiriProxy::Plugin
 ############# Actions
 
   def command_sidelight(command)
-	`tdtool --#{command} 2`
+	`tdtool --#{command} 3`
 	say "Sidelight is now turned #{command.capitalize}."
   end
   
@@ -34,7 +34,7 @@ class SiriProxy::Plugin::RPi < SiriProxy::Plugin
   end
   
     def command_bed_light(command)
-	`tdtool --#{command} 2`
+	`tdtool --#{command} 1`
 	say "Bed light is now turned #{command.capitalize}."
   end
   
