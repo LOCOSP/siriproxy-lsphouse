@@ -15,7 +15,7 @@ class SiriProxy::Plugin::RPi < SiriProxy::Plugin
 
   def command_sidelight(command)
 	`tdtool --#{command} 2`
-	say "Turning #{command} sidelight now."
+	say "Sidelight is now turned #{command.capitalize}."
   end
   
 ############# Initialization
