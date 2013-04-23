@@ -24,12 +24,12 @@ class SiriProxy::Plugin::RPi < SiriProxy::Plugin
 ############# Actions
 
   def command_sidelight(command)
-	`tdtool --#{command} 3`
+	`tdtool --#{command} 2`
 	say "Sidelight is now turned #{command}."
   end
   
     def command_gallery(command)
-	`tdtool --#{command} 2`
+	`tdtool --#{command} 3`
 	say "Gallery is now turned #{command}."
   end
   
