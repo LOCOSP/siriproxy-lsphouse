@@ -1,4 +1,4 @@
-class SiriProxy::Plugin::RPi < SiriProxy::Plugin
+class SiriProxy::Plugin::LSPHouse < SiriProxy::Plugin
 
   def initialize(config)
   end
