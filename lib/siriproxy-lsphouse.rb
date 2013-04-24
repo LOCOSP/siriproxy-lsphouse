@@ -6,12 +6,12 @@ class SiriProxy::Plugin::RPi < SiriProxy::Plugin
   
 ############# Commands
   
-  listen_for (/lights check/i) do 
+  listen_for (/tellstick check/i) do 
 	telldus_status
 	request_completed
   end
   
-    listen_for (/ start light service/i) do 
+    listen_for (/start light service/i) do 
 	telldus_start
 	request_completed
   end
@@ -26,7 +26,7 @@ class SiriProxy::Plugin::RPi < SiriProxy::Plugin
 	request_completed
   end
   
-    listen_for (/turn (on|off) bed light/i) do |command|
+    listen_for (/turn (on|off) bedlight/i) do |command|
 	command_bed_light(command)
 	request_completed
   end
@@ -44,17 +44,17 @@ class SiriProxy::Plugin::RPi < SiriProxy::Plugin
   end
 
   def command_sidelight(command)
-	`tdtool --#{command} 2`
+	`/usr/bin/tdtool --#{command} 2`
 	say "Sidelight is now turned #{command}."
   end
   
     def command_gallery(command)
-	`tdtool --#{command} 3`
+	`/usr/bin/tdtool --#{command} 3`
 	say "Gallery is now turned #{command}."
   end
   
     def command_bed_light(command)
-	`tdtool --#{command} 1`
+	`/usr/bin/tdtool --#{command} 1`
 	say "Bed light is now turned #{command}."
   end
   
