@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
   s.authors     = ["locosp"]
   s.email       = [""]
   s.homepage    = "https://github.com/LOCOSP/siriproxy-lsphouse/"
-  s.summary     = %q{SiriProxy plugin for Raspberry Pi specific control}
-  s.description = %q{SiriProxy plugin for Raspberry Pi specific control}
+  s.summary     = %q{SiriProxy plugin for Raspberry Pi and my house automation}
+  s.description = %q{SiriProxy plugin for Raspberry Pi house automation}
 
   s.rubyforge_project = ""
 
