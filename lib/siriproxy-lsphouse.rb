@@ -44,17 +44,17 @@ class SiriProxy::Plugin::LSPHouse < SiriProxy::Plugin
   end
 
   def command_sidelight(command)
-	`/usr/bin/tdtool --#{command} 2`
+	`/usr/local/tdtool --#{command} 2`
 	say "Sidelight is now turned #{command}."
   end
   
     def command_gallery(command)
-	`/usr/bin/tdtool --#{command} 3`
+	`/usr/local/tdtool --#{command} 3`
 	say "Gallery is now turned #{command}."
   end
   
     def command_bed_light(command)
-	`/usr/bin/tdtool --#{command} 1`
+	`/usr/local/tdtool --#{command} 1`
 	say "Bed light is now turned #{command}."
   end
   
