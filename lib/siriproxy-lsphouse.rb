@@ -5,8 +5,8 @@ class SiriProxy::Plugin::LSPHouse < SiriProxy::Plugin
 
   
 ############# Commands
-  
-  listen_for (/tellstick check/i) do 
+
+  listen_for (/tellstick check|lights check|tellstick status/i) do 
 	telldus_status
 	request_completed
   end
@@ -44,17 +44,20 @@ class SiriProxy::Plugin::LSPHouse < SiriProxy::Plugin
   end
 
   def command_sidelight(command)
-	system "/usr/bin/tdtool --#{command} 2"
+        say "Ok, deluminating!"
+	    system "/usr/local/bin/tdtool --#{command} 2"
 	say "Sidelight is now turned #{command}."
   end
   
     def command_gallery(command)
-	system "/usr/bin/tdtool --#{command} 3"
+        say "Ok, deluminating!"
+	    system "/usr/local/bin/tdtool --#{command} 3"
 	say "Gallery is now turned #{command}."
   end
   
     def command_bed_light(command)
-	system "/usr/bin/tdtool --#{command} 1"
+        say "Ok, deluminating!"
+	system "/usr/local/bin/tdtool --#{command} 1"
 	say "Bed light is now turned #{command}."
   end
   
